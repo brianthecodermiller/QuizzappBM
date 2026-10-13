@@ -1,5 +1,6 @@
 package com.example.quizappbm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                score += 1;
                 String text= "Correct!";
                 int duration = Toast.LENGTH_SHORT;
                 Toast correct =Toast.makeText(MainActivity.this,text,duration);
@@ -68,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent nextBtn =new Intent(MainActivity.this, ScoreActivity.class);
+                nextBtn.putExtra("Score",score);
+                startActivity(nextBtn);
 
             }
         });
