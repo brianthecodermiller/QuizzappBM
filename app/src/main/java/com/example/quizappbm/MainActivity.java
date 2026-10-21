@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     TextView questionNumber,questionText;
     Button nextButton,trueButton,falseButton;
     int score;
+    int questionNum;
+
 
       Question[] questions;
 
@@ -31,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
         nextButton = findViewById(R.id.nextButton);
         trueButton=findViewById(R.id. trueButton);
         falseButton=findViewById(R.id.falseButton);
-        score= 0;
-        questions = new Question[] {
+        score= 1;
+        questionNum= 0;
+
+
+                questions = new Question[] {
                 new Question("Luke Skywalker is Darth Vader's son.", true),
                 new Question("Chewbacca is a Wookiee.", true),
                 new Question("Yoda's lightsaber color in Episode II is red.", false),
@@ -56,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 correct.show();
             }
         });
+
         falseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,19 +70,21 @@ public class MainActivity extends AppCompatActivity {
                 Toast wrong =Toast.makeText(MainActivity.this,text,duration);
                 wrong.show();
             }
-
-
         });
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextBtn =new Intent(MainActivity.this, ScoreActivity.class);
-                nextBtn.putExtra("Score",score);
-                startActivity(nextBtn);
-
+                if ( questionNum > questions.length - 9) {
+                    questionNum++;
+                } else {
+                    Intent intent = new Intent(
+                            MainActivity.this, ScoreActivity.class
+                    );
+                    intent.putExtra("Score", score);
+                    startActivity(intent);
+                }
             }
         });
-
 
 
 
