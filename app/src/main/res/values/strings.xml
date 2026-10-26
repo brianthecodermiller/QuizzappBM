@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">QuizappBM</string>
+    <string name="titleStarWars">Star Wars Quiz</string>
+    <string name="Q1">Luke Skywalker is Darth Vader\'s son</string>
+    <string name="Right">TRUE</string>
+    <string name="Wrong">False</string>
+    <string name="Nextq">Next Question</string>
+    <string name="Q2">Chewbacca is a Wookiee<string name="Q3">Yoda\'s lightsaber color in Episode II is red.</string>
+    <string name="questionNum">Question 1 of 10</string>
+    <string name="Q4">Han Solo was frozen in Carbonite</string>
+    <string name="Q5">Princess Leia is Luke Skywalker\'s sister</string>
+    <string name="Q6">R2-D2 is a protocol droid</string>
+    <string name="Q7"></string>
 </resources>
